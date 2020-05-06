@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="columns">
-      <div class="column is-6">
+      <div class="column is-6 is-4-widescreen">
         <div class="columns is-multiline">
           <div class="column is-12">
             <content-card :gradientBgTypeProps='1'>
@@ -17,7 +17,7 @@
           </div>
         </div>
       </div>
-      <div class="column is-6">
+      <div class="column is-6 is-8-widescreen">
         <div class="columns">
           <div class="column is-6">
             <content-card :gradientBgTypeProps='2'>

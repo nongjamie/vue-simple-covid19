@@ -7,7 +7,7 @@
         </p>
       </div>
       <div class="column is-12">
-        <div class='px-12 lg:px-20'>
+        <div class='px-10 lg:px-32'>
           <cards-section
             :summaryGlobalProps='summaryGlobalProps'
           ></cards-section>
