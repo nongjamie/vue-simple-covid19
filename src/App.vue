@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <b-loading :is-full-page="true" :active.sync="isLoading" :can-cancel="false"></b-loading>
     <div id='content'>
       <router-view/>
     </div>
@@ -7,10 +8,14 @@
 </template>
 
 <script>
-import NavBar from '@/components/navbar/Navbar.vue';
+import { mapGetters } from 'vuex';
 
 export default {
-  components: { NavBar }
+  computed: {
+    ...mapGetters({
+      isLoading: 'loading/isLoading'
+    })
+  }
 }
 </script>
 

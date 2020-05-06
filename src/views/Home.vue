@@ -17,6 +17,7 @@ import HeaderSection from '@/views/header/Header.vue';
 import GlobalSection from '@/views/global/Global.vue';
 import CountriesSection from '@/views/countries/Countries.vue';
 import summaryService from '@/service/summaryService.js';
+import { mapActions } from 'vuex';
 
 export default {
   components: { HeaderSection, GlobalSection, CountriesSection },
@@ -31,7 +32,12 @@ export default {
     this.fetchSummary();
   },
   methods: {
+    ...mapActions({
+      startLoading: 'loading/start',
+      stopLoading: 'loading/stop',
+    }),
     async fetchSummary() {
+      this.startLoading();
       try {
         const result = await summaryService.getSummary();
         this.summaryDate = result.data.Date;
@@ -39,6 +45,8 @@ export default {
         this.summaryCountries = [...result.data.Countries];
       } catch(err) {
         console.log(err.response);
+      } finally {
+        this.stopLoading();
       }
     }
   }
