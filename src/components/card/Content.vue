@@ -1,14 +1,12 @@
 <template>
   <div class='card-style shadow-xl p-2 h-full py-3' :style="getGradientBg()">
     <div 
-      class='text-left text-white ml-2' 
-      style='font-weight: bold; font-size: 1rem;'
+      class='text-left text-white ml-2 text-base font-bold' 
     >
       <slot name='header'></slot>
     </div>
     <div
-      class='text-right text-white mr-4' 
-      style='font-style: italic; font-size: 1rem;'
+      class='text-right text-white mr-4 text-base italic' 
     >
       <slot name='footer'></slot>
     </div>
