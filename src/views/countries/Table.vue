@@ -3,7 +3,7 @@
     <div class="columns">
       <div class="column is-3">
         <b-field>
-            <b-select expanded v-model='selectedOption' placeholder="Sort selection" type='is-info'>
+            <b-select expanded v-model='selectedOption' placeholder="Sort selection">
                 <option
                     v-for="option in options"
                     :value="option.id"
