@@ -1,5 +1,5 @@
 <template>
-  <div class='py-8 bg-gray-200'>
+  <div class='py-8 bg-gray-100'>
     <div class="columns is-multiline">
       <div class="column is-12">
         <p class='text-center text-3xl sm:text-4xl mb-4'>
