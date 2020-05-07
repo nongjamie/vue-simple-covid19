@@ -37,5 +37,6 @@ export default {
   background-size: cover;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), 
   url("https://cdn3.eyeem.com/thumb/4d63967484f539e700208e60ad71ca5ebafabd7f-1527513585138/w/850");
+  background-attachment: fixed;
 }
 </style>
