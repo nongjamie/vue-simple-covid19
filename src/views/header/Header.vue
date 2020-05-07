@@ -21,11 +21,10 @@ export default {
   mixins: [ dateMixin ],
   props: {
     summaryDateProps: String,
-    githubLink: 'https://github.com/nongjamie'
   },
   methods: {
     creditClicked() {
-      window.location.href = this.githubLink;
+     window.location = 'https://github.com/nongjamie';
     }
   }
 }
