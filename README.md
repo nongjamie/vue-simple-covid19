@@ -1,30 +1,9 @@
 # vue-simple-covid19
 
-## Project setup
-```
-npm install
-```
+## Description
+- This project is about covid19 crisis summary.
+- Developed by Vuejs & Deployed on Firebase hosting.
+- Click this [link](https://bit.ly/2SL1Zud) to see the website.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-# vue-simple-covid19
+## Author
+- Sathira Kittisukmongkol
