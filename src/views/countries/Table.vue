@@ -15,8 +15,16 @@
       </div>
       <div class="column is-hidden-mobile"> </div>
       <div class="column is-4">
-        <b-field>
+        <!-- <b-field>
             <b-input v-model="query" placeholder='Search the country'></b-input>
+        </b-field> -->
+        <b-field label="">
+            <b-taginput
+                v-model="tags"
+                ellipsis
+                icon="label"
+                placeholder="Search country by tag">
+            </b-taginput>
         </b-field>
       </div>
     </div>
@@ -40,6 +48,10 @@
 
               <b-table-column field="country" label="Country">
                   {{ props.row.Country }}
+              </b-table-column>
+
+              <b-table-column field="flag" label="Flag">
+                  <img :src="`https://www.countryflags.io/${props.row.CountryCode}/flat/32.png`">
               </b-table-column>
 
               <b-table-column field="confirmed" label="Confirmed">
@@ -103,19 +115,31 @@ export default {
       ],
       selectedOption: 0,
       query: '',
-      currentPage: 1
+      currentPage: 1,
+      tags: []
     }
   },
   computed: {
     filteredCountries() {
       if(this.summaryCountriesProps) {
-        let filteredResult = this.summaryCountriesProps.filter(el => {
-          let userQuery = this.query.trim().toLowerCase();
-          if(userQuery.length > 0) {
-            let searchQuery = `${el.Country}`.toLowerCase();
-            return searchQuery.includes(userQuery);
-          } return true;
-        });
+        let filteredResult = [];
+        if(this.tags.length > 0) {
+          this.summaryCountriesProps.forEach(eachCountry => {
+            let country = (eachCountry.Country.toLowerCase());
+            let shouldPass = false;
+            for(let eachTag of this.tags) {
+              let tag = eachTag.toLowerCase();
+              if(country.includes(tag)) {
+                shouldPass = true;
+                break;
+              }
+            }
+            if(shouldPass)
+              filteredResult.push(eachCountry);
+          });
+        } else {
+          filteredResult = [...this.summaryCountriesProps];
+        }
         return this._.orderBy(filteredResult, [this.options[this.selectedOption].value], ['desc']);
       }
       else return [];
