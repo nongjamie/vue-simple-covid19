@@ -10,7 +10,7 @@
     "axios": "^0.19.2",
     "buefy": "^0.8.17",
     "core-js": "^3.6.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment": "^2.25.3",
     "numeral": "^2.0.6",
     "tailwindcss": "^1.4.4",
